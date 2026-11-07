@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XV Años · Alejandra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Cormorant+Garamond:ital,wght@0,500;1,600&family=Dancing+Script:wght@700&family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@500;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="lock">
+
+<!-- ===== SOBRE ===== -->
+<div id="sobre">
+  <div class="sobre-wrap" id="sobreBtn" role="button" tabindex="0" aria-label="Abrir invitación">
+    <div class="sobre-img">
+      <span id="sobreEmoji">💌</span>
+      <img id="sobreImg" alt="" onerror="this.style.display='none'">
+    </div>
+    <p class="sobre-pre">Tienes una invitación muy especial</p>
+    <p class="sobre-txt">Toca el sobre para abrirla</p>
+  </div>
+</div>
+
+<canvas id="confeti"></canvas>
+<button id="musicaBtn" class="musica" hidden aria-label="Pausar o reanudar música">🔊</button>
+<button id="subirBtn" class="subir" hidden aria-label="Volver al inicio">↑</button>
+
+<main id="inv" hidden>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero" id="hero">
+    <div class="hero-bg" id="heroBg"></div>
+    <span class="deco" style="--x:4%;--y:6%;--s:48px;--r:-14deg">🎀</span>
+    <span class="deco" data-img="bola.png" style="--x:80%;--y:10%;--s:54px;--r:12deg">🪩</span>
+    <span class="deco" style="--x:6%;--y:52%;--s:40px;--r:10deg">⭐</span>
+    <span class="deco" style="--x:84%;--y:56%;--s:42px;--r:-8deg">✨</span>
+    <img id="heroImg" class="hero-img" alt="Happy Birthday XV" onerror="this.style.display='none'">
+    <h1 class="mix nombre">Alejandra</h1>
+   
+    <p class="bajar">Desliza ↓</p>
+  </header>
+
+  <!-- ===== PADRES ===== -->
+  <section class="sec padres">
+    <span class="deco" style="--x:3%;--y:4%;--s:44px;--r:-10deg">🎀</span>
+    <span class="deco" data-img="bola.png" style="--x:86%;--y:92%;--s:44px;--r:14deg">🪩</span>
+    <h2 class="mix titulo rev">Mis padres</h2>
+    <div class="card rev">
+      <p class="nom">Nombre de la Madre<br> Apellido Materno</p>
+      <p class="y">&amp;</p>
+      <p class="nom">Nombre del Padre <br> Apellido Paterno</p>
+      <p class="msg">Gracias por ser mi guía, mi apoyo y mi lugar seguro. Este sueño es posible por todo su amor y por cada sacrificio que han hecho por mí.</p>
+    </div>
+  </section>
+
+  <!-- FOTO 1 PLACEHOLDER -->
+  <div class="parche-box"><figure class="parche" style="--w:210px;--r:-5deg"><img src="foto 1.png" alt="Alejandra" onerror="this.remove()"></figure></div>
+
+  <!-- ===== PADRINOS ===== -->
+  <section class="sec padrinos">
+    <h2 class="mix titulo rev">Mis padrinos</h2>
+    <div class="card claro rev">
+      <p class="nom">Nombre Madrina</p>
+      <p class="y">&amp;</p>
+      <p class="nom">Nombre Padrino</p>
+      <p class="msg">Gracias por acompañarme en este paso tan importante y por ser parte de mi historia. Su cariño y sus consejos me acompañan siempre.</p>
+    </div>
+  </section>
+
+  <!-- ===== CUENTA REGRESIVA ===== -->
+  <section class="sec cuenta">
+    <span class="deco" style="--x:5%;--y:8%;--s:38px;--r:-12deg">⭐</span>
+    <span class="deco" style="--x:86%;--y:6%;--s:38px;--r:10deg">✨</span>
+    <h2 class="mix titulo rev">Falta poco</h2>
+    <div class="bolas rev" id="cd">
+      <div class="bola-item"><div class="bola"><b data-cd>00</b></div><span>Días</span></div>
+      <div class="bola-item"><div class="bola"><b data-cd>00</b></div><span>Horas</span></div>
+      <div class="bola-item"><div class="bola"><b data-cd>00</b></div><span>Minutos</span></div>
+      <div class="bola-item"><div class="bola"><b data-cd>00</b></div><span>Segundos</span></div>
+    </div>
+     <p class="fecha-hero">25 de octubre de 2027</p>
+  </section>
+
+  <!-- ===== CEREMONIA Y RECEPCIÓN ===== -->
+  <section class="sec evento">
+    <h2 class="mix titulo rev">El gran día</h2>
+    <div class="card claro rev">
+      <p class="etq">Ceremonia religiosa</p>
+      <p class="dato">Templo de Ejemplo</p>
+      <p class="det"> <strong> Av. Ejemplo #123, Col. Centro, <br> Ciudad, Estado</strong> <br><br> 5:00 p.m. </p>
+      <a class="btn" href="https://maps.google.com" target="_blank" rel="noopener">Ver ubicación</a>
+    </div>
+    <div class="card claro rev">
+      <p class="etq">Recepción</p>
+      <p class="dato">Salón / Quinta Ejemplo</p>
+      <p class="det"> <strong> Calle de Eventos #456, <br> Ciudad, Estado </strong> <br><br> 7:00 p.m. - 1:00 a.m.</p>
+      <a class="btn" href="https://maps.google.com" target="_blank" rel="noopener">Ver ubicación</a>
+    </div>
+  </section>
+
+  <!-- FOTO 3 PLACEHOLDER -->
+  <div class="parche-box"><figure class="parche" style="--w:205px;--r:-4deg"><img src="foto 2.png" alt="Alejandra" onerror="this.remove()"></figure></div>
+
+  <!-- ===== VESTIMENTA ===== -->
+  <section class="sec vestimenta">
+    <span class="deco" style="--x:8%;--y:70%;--s:46px;--r:-10deg">👗</span>
+    <h2 class="mix titulo rev">Vestimenta</h2>
+    <div class="card claro rev">
+      <p class="dato">Semiformal</p>
+      <p class="det">El color rosa está reservado para la quinceañera.</p>
+       <div class="tonos">
+        <div class="tono"><i style="--c:#fbcfe8"></i><span>Rosa pastel</span></div>
+        <div class="tono"><i style="--c:#f4c2c2"></i><span>Rosa blush</span></div>
+        <div class="tono"><i style="--c:#e3a6b4"></i><span>Rosa palo</span></div>
+        <div class="tono"><i style="--c:#f78fb3"></i><span>Rosa chicle</span></div>
+        <div class="tono"><i style="--c:#e4007c"></i><span>Rosa mexicano</span></div>
+        <div class="tono"><i style="--c:#b76e86"></i><span>Rosa viejo</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REGALOS ===== -->
+  <section class="sec regalos">
+    <span class="deco fija" data-img="sobre.png" style="--s:220px">💌</span>
+    <h2 class="mix titulo rev">Regalos</h2>
+    <div class="card claro rev">
+      <p class="det">Tu presencia es el mejor regalo, sin embargo si deseas traer un obsequio puedes hacerlo a través de</p>
+      <p class="dato">“Lluvia de sobres”</p>
+    </div>
+  </section>
+
+  <!-- FOTO 4 PLACEHOLDER -->
+  <div class="parche-box"><figure class="parche" style="--w:210px;--r:5deg"><img src="foto 4.png" alt="Alejandra" onerror="this.remove()"></figure></div>
+
+  <!-- ===== CONFIRMACIÓN (fondo de changos) ===== -->
+  <section class="sec confirma fondo-changos" id="changos">
+    <span class="deco" style="--x:5%;--y:6%;--s:44px;--r:-10deg">🎀</span>
+    <span class="deco" data-img="bola.png" style="--x:86%;--y:90%;--s:44px;--r:12deg">🪩</span>
+    <h2 class="mix titulo rev">¿Nos acompañas?</h2>
+    <div class="card claro rev">
+      <form id="rsvp" method="POST" target="oculto" novalidate>
+        <label for="nombre">Tu nombre</label>
+        <input id="nombre" type="text" placeholder="Escribe tu nombre completo" autocomplete="name">
+        <div class="opc">
+          <label><input type="radio" id="siR"> Sí asistiré</label>
+          <label><input type="radio" id="noR"> No podré asistir</label>
+        </div>
+        <p id="rsvpMsg" class="error" role="alert"></p>
+        <button type="submit" class="btn">Confirmar asistencia</button>
+      </form>
+      <p id="rsvpOk" class="ok" hidden>¡Gracias! Tu respuesta fue enviada.</p>
+    </div>
+    <iframe name="oculto" hidden title="envío"></iframe>
+  </section>
+
+  <!-- ===== AGRADECIMIENTO ===== -->
+  <section class="sec gracias">
+    <span class="deco" style="--x:6%;--y:8%;--s:40px;--r:-10deg">✨</span>
+    <span class="deco" style="--x:86%;--y:84%;--s:40px;--r:10deg">⭐</span>
+    <p class="grande rev">Hay días que se vuelven inolvidables, momentos que queremos guardar para siempre y personas que hacen nuestra vida más especial. Por eso quiero que estén conmigo en esta noche tan importante y compartan la alegría de celebrar.</p>
+    <p class="mix firma-xv rev">Alejandra</p>
+  </section>
+
+  <!-- FOTO 4 PLACEHOLDER -->
+  <div class="parche-box"><figure class="parche" style="--w:210px;--r:5deg"><img src="foto 3.png" alt="Alejandra" onerror="this.remove()"></figure></div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <img src="img/firma.png" alt="By Angel Trejo · AT Design Studio" class="firma" onerror="this.style.display='none'">
+    <p>© AT Design Studio</p>
+    <p><a href="https://facebook.com/AngelTrejo88" target="_blank" rel="noopener">By: Angel Trejo</a></p>
+    <p>Todos los derechos reservados</p>
+    <p>Durango, Dgo. · México 🇲🇽</p>
+  </footer>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

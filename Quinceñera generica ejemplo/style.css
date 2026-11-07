@@ -1,0 +1,160 @@
+/* ===== PALETA ===== */
+:root{
+  --bg:#ffe6f0; --rosa:#f9a8cc; --rosa2:#ec6ba5; --fucsia:#d6336c; --vino:#9d174d; --plata:#d9d6de;
+  --txt:#5a1a3a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',sans-serif;font-weight:300;color:var(--txt);line-height:1.6;
+  background:#ffd3e6;overflow-x:hidden}
+body::before{content:"";position:fixed;top:0;left:0;right:0;bottom:0;z-index:-1;
+  background:linear-gradient(180deg,#ffe6f0,#ffd3e6 45%,#ffe6f0)}
+body.lock{overflow:hidden;height:100%}
+
+/* ===== TIPOGRAFÍA POR LETRA ===== */
+.mix{line-height:1.15}
+.mix .w{display:inline-block;white-space:nowrap}
+.mix .l{display:inline-block;transform:rotate(var(--rt,0deg))}
+.l0{font-family:'Playfair Display',serif;font-weight:900;color:var(--vino)}
+.l1{font-family:'Dancing Script',cursive;color:var(--rosa2);font-size:1.12em}
+.l2{font-family:'Abril Fatface',serif;color:var(--fucsia)}
+.l3{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;color:#b8326f;font-size:1.1em}
+.titulo{font-size:clamp(2.4rem,10vw,3.3rem);text-align:center;margin-bottom:22px}
+
+/* ===== SOBRE ===== */
+#sobre{position:fixed;inset:0;z-index:90;display:grid;place-items:center;text-align:center;padding:20px;
+  background:radial-gradient(circle at 50% 35%,#fff0f6,#ffc4dc 70%)}
+#sobre.fuera{opacity:0;pointer-events:none;transition:opacity 1s}
+.sobre-wrap{cursor:pointer;outline:none;-webkit-tap-highlight-color:transparent}
+.sobre-img{position:relative;width:min(78vw,340px);height:calc(min(78vw,340px) * .75);aspect-ratio:4/3;margin:0 auto 18px;display:grid;place-items:center;
+  animation:flota 3s ease-in-out infinite}
+.sobre-img span{font-size:7rem;filter:drop-shadow(0 10px 14px rgba(157,23,77,.3))}
+.sobre-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.sobre-pre{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:1.5rem;color:var(--vino)}
+.sobre-txt{font-weight:600;font-size:.95rem;color:var(--fucsia);margin-top:6px;animation:pulso 1.6s ease-in-out infinite}
+#sobre.abre .sobre-img{animation:none;transform:scale(1.08);transition:transform .6s}
+#sobre.abre .sobre-txt{opacity:0}
+@keyframes flota{50%{transform:translateY(-10px) rotate(-1.5deg)}}
+@keyframes pulso{50%{opacity:.4}}
+#confeti{position:fixed;inset:0;width:100%;height:100%;z-index:100;pointer-events:none}
+
+/* ===== BOTONES FLOTANTES ===== */
+.musica,.subir{position:fixed;bottom:14px;z-index:60;width:46px;height:46px;border-radius:50%;border:3px solid #fff;
+  background:var(--fucsia);color:#fff;font-size:1.1rem;cursor:pointer;box-shadow:0 6px 16px rgba(157,23,77,.4)}
+.musica{left:14px}
+.subir{right:14px;font-weight:600;transition:opacity .3s}
+
+/* ===== ADORNOS EDITABLES ===== */
+.deco{position:absolute;left:var(--x);top:var(--y);width:var(--s);font-size:var(--s);line-height:1;z-index:1;
+  transform:rotate(var(--r,0deg));pointer-events:none;animation:brilla 3.5s ease-in-out infinite}
+.deco img{width:100%;display:block}
+.deco.fija{position:relative;left:auto;top:auto;display:block;width:auto;margin:0 auto 6px;text-align:center}
+.deco.fija img{width:var(--s);margin:0 auto}
+@keyframes brilla{50%{transform:rotate(var(--r,0deg)) scale(1.12)}}
+
+/* ===== BOLAS CAYENDO ===== */
+.caida{position:fixed;top:-60px;z-index:40;pointer-events:none;opacity:.55;animation:caer linear infinite}
+.caida img{width:100%;display:block}
+@keyframes caer{0%{transform:translate(0,-8vh) rotate(0)}50%{transform:translate(24px,55vh) rotate(180deg)}100%{transform:translate(-10px,112vh) rotate(360deg)}}
+
+/* ===== HERO ===== */
+.hero{position:relative;min-height:100vh;min-height:100svh;overflow:hidden;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;padding:34px 16px 28px;text-align:center}
+.hero-bg{position:absolute;inset:-30px;z-index:0;
+  background-image:var(--img,none),linear-gradient(135deg,#c9a7ff,#ffb3d1 55%,#a9d8ff);background-size:cover;background-position:center;
+  filter:blur(.5px) hue-rotate(-25deg) saturate(.95) brightness(1.98)}
+.hero::after{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(180deg,rgba(255,255,255,.35),rgba(255,214,232,.55))}
+.hero>*:not(.hero-bg):not(.deco){position:relative;z-index:2}
+.hero-img{width:min(86vw,400px);max-height:66vh;max-height:66svh;object-fit:contain;filter:drop-shadow(0 12px 22px rgba(157,23,77,.35))}
+.nombre{font-size:clamp(2.6rem,11vw,3.8rem);margin-top:12px;text-shadow:0 2px 0 rgba(255,255,255,.8)}
+.fecha-hero{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:2.35rem;color:var(--vino)}
+.bajar{margin-top:10px;font-size:.8rem;color:var(--vino);animation:pulso 1.8s infinite}
+
+/* ===== SECCIONES ===== */
+.sec{position:relative;padding:76px 22px;text-align:center;overflow:hidden}
+.sec>*:not(.deco){position:relative;z-index:2}
+.card{max-width:440px;margin:0 auto 20px;border-radius:28px;padding:30px 22px}
+.card.claro{background:rgba(255,255,255,.78);border:2px solid #fff;box-shadow:0 12px 30px rgba(214,51,108,.18)}
+.nom{font-family:'Playfair Display',serif;font-weight:900;font-size:1.45rem;line-height:1.25}
+.y{font-family:'Dancing Script',cursive;font-size:2rem;color:var(--rosa2);line-height:1.1}
+.msg{margin-top:18px;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:1.25rem}
+.etq{font-family:'Dancing Script',cursive;font-size:1.9rem;color:var(--fucsia)}
+.dato{font-family:'Playfair Display',serif;font-weight:900;font-size:1.6rem;color:var(--vino);margin:4px 0}
+.det{font-size:1rem}
+.btn{display:inline-block;margin-top:18px;padding:12px 28px;border:0;border-radius:999px;background:linear-gradient(135deg,var(--rosa2),var(--fucsia));
+  color:#fff;font:600 .95rem 'Montserrat',sans-serif;text-decoration:none;cursor:pointer;box-shadow:0 6px 16px rgba(214,51,108,.4)}
+
+/* Tonos de rosa (vestimenta) */
+.tonos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px 8px;margin:22px 0 4px}
+.tono i{display:block;width:54px;height:54px;margin:0 auto 6px;border-radius:50%;
+  background:radial-gradient(circle at 30% 28%,rgba(255,255,255,.7) 0 10%,transparent 30%),var(--c);
+  border:3px solid #fff;box-shadow:0 6px 14px rgba(157,23,77,.25)}
+.tono span{font-size:.75rem;font-weight:600;color:var(--vino)}
+.nota{margin-top:14px;font-size:.85rem}
+
+/* Padres */
+.padres .card{background:linear-gradient(160deg,var(--fucsia),var(--vino));color:#fff;border:4px double #ffd1e5;
+  box-shadow:0 0 0 6px rgba(255,255,255,.55),0 18px 40px rgba(157,23,77,.45);position:relative}
+.padres .card::before{content:"✦ ✦ ✦";display:block;letter-spacing:.5em;color:#ffd1e5;margin-bottom:10px}
+.padres .nom{color:#fff;font-size:1.6rem}
+.padres .y{color:#ffd1e5}
+
+/* ===== PARCHES (fotos) ===== */
+.parche-box{position:relative;z-index:5;margin:-34px 0;display:flex;justify-content:center;pointer-events:none}
+.parche{--w:210px;width:var(--w);height:calc(var(--w) * 1.1);aspect-ratio:1/1.1;position:relative;transform:rotate(var(--r));border-radius:20px;
+  border:8px solid var(--rosa2);background:#ffd1e5;overflow:hidden;box-shadow:0 12px 24px rgba(157,23,77,.35)}
+.parche::before{content:"📷";position:absolute;inset:0;display:grid;place-items:center;font-size:3rem}
+.parche img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;display:block}
+.parche::after{content:"";position:absolute;inset:4px;z-index:2;border:3px dashed #fff;border-radius:12px;pointer-events:none}
+
+/* ===== CUENTA REGRESIVA ===== */
+.bolas{display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
+.bola-item span{display:block;margin-top:8px;font-weight:600;font-size:.85rem;color:var(--vino)}
+.bola{width:88px;height:88px;border-radius:50%;display:grid;place-items:center;
+  background:radial-gradient(circle at 32% 26%,rgba(255,255,255,.95) 0 6%,transparent 24%),repeating-conic-gradient(#fbcfe8 0 25%,#f06aa8 0 50%);
+  background-size:auto,18px 18px;animation:mosaico 3s linear infinite;
+  box-shadow:0 10px 22px rgba(214,51,108,.4),inset -8px -10px 16px rgba(157,23,77,.35)}
+.bola b{font-family:'Abril Fatface',serif;font-weight:400;font-size:1.6rem;color:var(--fucsia);background:rgba(255,255,255,.9);
+  min-width:50px;padding:2px 6px;border-radius:12px}
+@keyframes mosaico{to{background-position:0 0,36px 0}}
+.hoy{font-family:'Dancing Script',cursive;font-size:2.4rem;color:var(--fucsia)}
+
+/* ===== FONDO DE CHANGOS ===== */
+.fondo-changos::before{content:"";position:absolute;inset:0;z-index:0;background-image:var(--img,none);background-size:500px;opacity:.5}
+
+/* ===== CONFIRMACIÓN ===== */
+form{text-align:left}
+label{font-weight:600;font-size:.9rem;display:block;margin-bottom:6px}
+input[type=text],.btn{-webkit-appearance:none;appearance:none}
+input[type=text]{width:100%;padding:13px 16px;border:2px solid var(--rosa);border-radius:14px;font:inherit;background:#fff;color:var(--txt);font-weight:600}
+input[type=text]::placeholder{font-weight:300;opacity:.7}
+input[type=text]:focus{outline:3px solid rgba(214,51,108,.35);border-color:var(--fucsia)}
+.opc{display:grid;gap:10px;margin:16px 0 4px}
+.opc label{display:flex;align-items:center;gap:10px;padding:12px 14px;border:2px solid var(--rosa);border-radius:14px;background:#fff;margin:0;font-weight:400;cursor:pointer}
+.opc input{accent-color:var(--fucsia);width:18px;height:18px}
+.error{color:#b00032;font-size:.85rem;min-height:1.2em;margin-top:8px}
+form .btn{width:100%;margin-top:6px}
+.ok{font-family:'Playfair Display',serif;font-weight:900;font-size:1.3rem;color:var(--vino)}
+
+/* ===== AGRADECIMIENTO ===== */
+.gracias{padding:90px 24px}
+.grande{max-width:560px;margin:0 auto 22px;font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(1.45rem,6vw,2.1rem);line-height:1.5;color:var(--vino)}
+.firma-xv{font-size:2.6rem}
+
+/* ===== FOOTER ===== */
+.footer{background:linear-gradient(180deg,var(--fucsia),var(--vino));color:#ffe6f0;text-align:center;padding:40px 20px 56px;font-size:.85rem}
+.footer p{margin-top:6px}
+.footer a{color:#fff;font-weight:600}
+.firma{max-width:180px;display:block;margin:0 auto 10px}
+
+/* ===== REVELAR ===== */
+.rev{opacity:0;transform:translateY(22px);transition:opacity .8s,transform .8s}
+.rev.vis{opacity:1;transform:none}
+
+/* ===== MOVIMIENTO REDUCIDO ===== */
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .caida{display:none}
+  .rev{opacity:1;transform:none}
+}
